@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hukum_janab/src/const/colors.dart';
 import 'package:hukum_janab/src/const/images.dart';
 import 'package:hukum_janab/src/customs_widgets/dashboard_drawer/dashboard_drawer.dart';
+import 'package:hukum_janab/src/screens/notifications/notifications_screen.dart';
 
 class Dasboard extends StatefulWidget {
   const Dasboard({super.key});
@@ -24,12 +25,20 @@ class _DasboardState extends State<Dasboard> {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        actions: const [
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-            child: FaIcon(
-              FontAwesomeIcons.solidBell,
-              color: Colors.white,
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const NotificationsScreen()));
+            },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+              child: FaIcon(
+                FontAwesomeIcons.solidBell,
+                color: Colors.white,
+              ),
             ),
           ),
         ],

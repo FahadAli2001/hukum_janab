@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hukum_janab/src/const/colors.dart';
 import 'package:hukum_janab/src/const/images.dart';
 import 'package:hukum_janab/src/screens/dashboard/dashboard.dart';
+import 'package:hukum_janab/src/screens/signup/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -75,10 +76,18 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 20,
             ),
-            Text(
-              "SIGN UP WITH EMAIL",
-              style: TextStyle(
-                color: primaryColor,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SignUpScreen()));
+              },
+              child: Text(
+                "SIGN UP WITH EMAIL",
+                style: TextStyle(
+                  color: primaryColor,
+                ),
               ),
             ),
             const SizedBox(

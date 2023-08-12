@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hukum_janab/src/const/colors.dart';
 import 'package:hukum_janab/src/const/images.dart';
 import 'package:hukum_janab/src/customs_widgets/dashboard_drawer/dashboard_drawer.dart';
+import 'package:hukum_janab/src/screens/more/more_screen.dart';
 import 'package:hukum_janab/src/screens/notifications/notifications_screen.dart';
 
 class Dasboard extends StatefulWidget {
@@ -411,18 +412,27 @@ class _DasboardState extends State<Dasboard> {
                               fontWeight: FontWeight.bold,
                               fontSize: 18),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: Container(
-                            padding: const EdgeInsets.only(left: 10, right: 10),
-                            decoration: BoxDecoration(
-                                border: Border.all(color: Colors.white)),
-                            child: const Center(
-                              child: Text(
-                                "More",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const MoreScreen()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: Container(
+                              padding:
+                                  const EdgeInsets.only(left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.white)),
+                              child: const Center(
+                                child: Text(
+                                  "More",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),

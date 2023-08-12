@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hukum_janab/src/const/colors.dart';
+import 'package:hukum_janab/src/const/images.dart';
 
 class MoreScreen extends StatefulWidget {
   const MoreScreen({super.key});
@@ -24,7 +25,25 @@ class _MoreScreenState extends State<MoreScreen> {
         child: ListView.builder(
           itemCount: 3,
           itemBuilder: (context, index) {
-            return Card();
+            return Card(
+              elevation: 10,
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(
+                          width: 100,
+                          height: 200,
+                          child: Image.asset(appPoster)),
+                      const Text(
+                        "Hukum Janab",
+                        style: TextStyle(color: Colors.black),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            );
           },
         ),
       ),

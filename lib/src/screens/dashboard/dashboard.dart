@@ -6,6 +6,8 @@ import 'package:hukum_janab/src/customs_widgets/dashboard_drawer/dashboard_drawe
 import 'package:hukum_janab/src/screens/more/more_screen.dart';
 import 'package:hukum_janab/src/screens/notifications/notifications_screen.dart';
 
+import '../emergency_service/emergency_service_screen.dart';
+
 class Dasboard extends StatefulWidget {
   const Dasboard({super.key});
 
@@ -109,25 +111,34 @@ class _DasboardState extends State<Dasboard> {
                 ),
               ),
               //
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                child: const Row(
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Column(
-                      children: [
-                        FaIcon(
-                          FontAwesomeIcons.triangleExclamation,
-                          color: Colors.red,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Emergency Services",
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const EmergencyServiceScreen()));
+                      },
+                      child: const Column(
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.triangleExclamation,
+                            color: Colors.red,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Emergency Services",
+                            style: TextStyle(fontSize: 12),
+                          )
+                        ],
+                      ),
                     ),
                     //
                     Column(

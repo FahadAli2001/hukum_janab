@@ -17,7 +17,7 @@ class _EmergencyServiceScreenState extends State<EmergencyServiceScreen> {
         backgroundColor: primaryColor,
         actions: const [
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10),
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
             child: FaIcon(
               FontAwesomeIcons.phone,
               color: Colors.white,
@@ -25,8 +25,8 @@ class _EmergencyServiceScreenState extends State<EmergencyServiceScreen> {
           )
         ],
       ),
-      body: Column(
-        children: const [
+      body: const Column(
+        children: [
           TextField(
             decoration: InputDecoration(
                 hintText: "Search Service",

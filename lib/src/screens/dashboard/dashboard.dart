@@ -5,6 +5,7 @@ import 'package:hukum_janab/src/const/images.dart';
 import 'package:hukum_janab/src/customs_widgets/dashboard_drawer/dashboard_drawer.dart';
 
 import 'package:hukum_janab/src/screens/notifications/notifications_screen.dart';
+import 'package:hukum_janab/src/screens/servicesDetailPage/services_detail_page.dart';
 
 class Dasboard extends StatefulWidget {
   const Dasboard({super.key});
@@ -79,63 +80,63 @@ class _DasboardState extends State<Dasboard> {
   List<Text> serviceName = const [
     Text(
       "Emergency Services",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Car Mechanic",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Bike Mechanic",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Generator Mechanic",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Car Towing Recovery",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "       UPS   ",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Car Wash",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "AC Technician",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Buy Inspection",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Scanning",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Vehical Insurance",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Dis-infection Service",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Home applinces Repairing",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "Key Maker",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     ),
     Text(
       "More",
-      style: TextStyle(fontSize: 12),
+      style: TextStyle(fontSize: 14),
     )
   ];
   @override
@@ -221,18 +222,40 @@ class _DasboardState extends State<Dasboard> {
                           ),
                         ),
                       ),
-                      // const Text(
-                      //   "Rs 0",
-                      //   style: TextStyle(
-                      //       color: Colors.white,
-                      //       fontWeight: FontWeight.bold,
-                      //       fontSize: 18),
-                      // )
                     ],
                   ),
                 ),
               ),
               //
+              for (var i = 0; i < serviceName.length; i++) ...[
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const ServicesDetailPage()));
+                    },
+                    child: SizedBox(
+                      width: size.width,
+                      height: 70,
+                      child: Card(
+                        elevation: 10,
+                        child: ListTile(
+                          leading: icons[i],
+                          title: serviceName[i],
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ]
             ],
           ),
         ),

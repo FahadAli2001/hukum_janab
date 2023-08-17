@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:hukum_janab/src/const/colors.dart';
-import 'package:hukum_janab/src/const/images.dart';
 
-class JoinUsAsMechanicScreen extends StatefulWidget {
-  const JoinUsAsMechanicScreen({super.key});
+import '../../const/colors.dart';
+import '../../const/images.dart';
+
+class JoinUsAsVendorScreen extends StatefulWidget {
+  const JoinUsAsVendorScreen({super.key});
 
   @override
-  State<JoinUsAsMechanicScreen> createState() => _JoinUsAsMechanicScreenState();
+  State<JoinUsAsVendorScreen> createState() => _JoinUsAsVendorScreenState();
 }
 
-class _JoinUsAsMechanicScreenState extends State<JoinUsAsMechanicScreen> {
+class _JoinUsAsVendorScreenState extends State<JoinUsAsVendorScreen> {
   bool individual = true;
   bool shop = false;
   bool android = true;
@@ -302,7 +303,7 @@ class _JoinUsAsMechanicScreenState extends State<JoinUsAsMechanicScreen> {
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  "Expertise",
+                  "Accessories",
                   style: TextStyle(color: primaryColor, fontSize: 20),
                 ),
               ),
@@ -312,16 +313,7 @@ class _JoinUsAsMechanicScreenState extends State<JoinUsAsMechanicScreen> {
               color: primaryColor,
               thickness: 1.5,
             ),
-            CheckboxListTile(
-              value: true,
-              onChanged: (val) {},
-              title: const Text("Car Expert"),
-            ),
-            CheckboxListTile(
-              value: true,
-              onChanged: (val) {},
-              title: const Text("Bike Expert"),
-            ),
+            //
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),

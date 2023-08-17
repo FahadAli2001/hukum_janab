@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hukum_janab/src/const/colors.dart';
 import 'package:hukum_janab/src/const/images.dart';
+import 'package:hukum_janab/src/join_us_as_corp_service/join_us_as_corp_service_screen.dart';
 import 'package:hukum_janab/src/screens/contact_us/contact_us_screen.dart';
 import 'package:hukum_janab/src/screens/faq/faq_screen.dart';
 import 'package:hukum_janab/src/screens/feedback/feedback_screen.dart';
 import 'package:hukum_janab/src/screens/join_us_as_mechanic/join_us_as_mechanic_screen.dart';
+import 'package:hukum_janab/src/screens/join_us_as_vendor/join_us_as_vendor_screen.dart';
 
 class DashboardDrawer extends StatelessWidget {
   const DashboardDrawer({super.key});
@@ -184,6 +186,12 @@ class DashboardDrawer extends StatelessWidget {
           SizedBox(
             height: 50,
             child: ListTile(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const JoinUsAsVendorScreen()));
+              },
               leading: FaIcon(
                 FontAwesomeIcons.person,
                 color: primaryColor,
@@ -198,6 +206,12 @@ class DashboardDrawer extends StatelessWidget {
           SizedBox(
             height: 50,
             child: ListTile(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const JoinUsAsCorpService()));
+              },
               leading: FaIcon(
                 FontAwesomeIcons.groupArrowsRotate,
                 color: primaryColor,

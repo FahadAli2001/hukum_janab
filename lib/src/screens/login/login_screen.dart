@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hukum_janab/src/const/colors.dart';
-import 'package:hukum_janab/src/const/images.dart';
-import 'package:hukum_janab/src/screens/dashboard/dashboard.dart';
 import 'package:hukum_janab/src/screens/signup/signup_screen.dart';
+ 
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -225,14 +224,20 @@ class _LoginScreenState extends State<LoginScreen> {
                                     color: primaryColor,
                                     ),
                               ),
-                               Text(
-                                "SignUp",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    color: primaryColor,
-                                    fontWeight: FontWeight.w900
-                                    ),
-                              ),
+                               GestureDetector(
+                                onTap: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)
+                                  =>const SignUpScreen()));
+                                },
+                                 child: Text(
+                                  "SignUp",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: primaryColor,
+                                      fontWeight: FontWeight.w900
+                                      ),
+                                                             ),
+                               ),
                         ],
                       ),
                     )

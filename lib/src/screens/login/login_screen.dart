@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hukum_janab/src/const/colors.dart';
+ import 'package:hukum_janab/src/screens/dashboard/dashboard.dart';
 import 'package:hukum_janab/src/screens/signup/signup_screen.dart';
  
 
@@ -143,28 +144,34 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Container(
-                        width: size.width,
-                        height: 45,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 1,
-                                blurRadius: 0.5,
-                                offset: const Offset(0,
-                                    02), // changes the position of the shadow
-                              ),
-                            ],
-                            color: primaryColor,
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const Center(
-                          child: Text(
-                            "Login",
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w900),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)
+                          =>const Dasboard()));
+                        },
+                        child: Container(
+                          width: size.width,
+                          height: 45,
+                          decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.8),
+                                  spreadRadius: 1,
+                                  blurRadius: 0.5,
+                                  offset: const Offset(0,
+                                      02), // changes the position of the shadow
+                                ),
+                              ],
+                              color: primaryColor,
+                              borderRadius: BorderRadius.circular(30)),
+                          child: const Center(
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w900),
+                            ),
                           ),
                         ),
                       ),

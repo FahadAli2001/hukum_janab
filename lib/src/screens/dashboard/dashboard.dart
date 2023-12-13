@@ -3,8 +3,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hukum_janab/src/const/colors.dart';
 import 'package:hukum_janab/src/const/images.dart';
 import 'package:hukum_janab/src/customs_widgets/dashboard_drawer/dashboard_drawer.dart';
-
-import 'package:hukum_janab/src/screens/notifications/notifications_screen.dart';
 import 'package:hukum_janab/src/screens/servicesDetailPage/services_detail_page.dart';
 
 class Dasboard extends StatefulWidget {
@@ -147,37 +145,21 @@ class _DasboardState extends State<Dasboard> {
         backgroundColor: primaryColor,
         // leading: FaIcon(FontAwesomeIcons.bars),
         title: const Text(
-          "Dashboard",
-          style: TextStyle(color: Colors.white),
+          "Hukum Janab",
+          style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900),
         ),
         centerTitle: true,
-        actions: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const NotificationsScreen()));
-            },
-            child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-              child: FaIcon(
-                FontAwesomeIcons.solidBell,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
+         
       ),
       drawer: const DashboardDrawer(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          padding: const EdgeInsets.only(bottom: 8.0),
           child: Column(
             children: [
               Container(
                 width: size.width,
-                height: size.height * 0.2,
+                height: size.height * 0.3,
                 // color: Colors.amber,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -186,7 +168,10 @@ class _DasboardState extends State<Dasboard> {
                     return Padding(
                       padding: const EdgeInsets.only(left: 5, right: 5),
                       child: Image.asset(
+                        
                         appPoster,
+                        fit: BoxFit.fill,
+                        width: 600,
                       ),
                     );
                   },
@@ -197,28 +182,81 @@ class _DasboardState extends State<Dasboard> {
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Container(
                   width: size.width,
-                  height: size.height * 0.05,
-                  color: primaryColor,
+                  height: size.height * 0.07,
+                  // color: primaryColor,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const FaIcon(
-                        FontAwesomeIcons.phone,
-                        color: Colors.white,
-                        size: 18,
+                      Container(
+                        height: size.height * 0.05,
+                        width: size.width * 0.45,
+                        decoration: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                                  Colors.black.withOpacity(0.3), // Shadow color
+                              spreadRadius: 2, // Spread radius
+                              blurRadius: 5, // Blur radius
+                              offset:const Offset(0, 3), // Shadow position
+                            ),
+                          ],
+                        ),
+                        child:const  Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                             Center(
+                                child: Icon(
+                              FontAwesomeIcons.phone,
+                              size: 15,
+                              color: Colors.white,
+                            )),
+                             SizedBox(
+                              width:2,
+                            ),
+                             Text(
+                            "Call",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                             
+                          ],
+                        ),
                       ),
                       Container(
-                        width: size.width * 0.6,
+                        height: size.height * 0.05,
+                        width: size.width * 0.45,
                         decoration: BoxDecoration(
-                            color: Colors.yellow.shade700,
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const Center(
+                          color: Colors.white,
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                                  Colors.black.withOpacity(0.3), // Shadow color
+                              spreadRadius: 2, // Spread radius
+                              blurRadius: 5, // Blur radius
+                              offset: const Offset(0, 3), // Shadow position
+                            ),
+                          ],
+                        ),
+                        child:const   Center(
                           child: Text(
-                            "REFER A FRIEND",
+                            "Refer a friend",
                             style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                              color: Colors.black,
+                            //  fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
                       ),
@@ -229,7 +267,7 @@ class _DasboardState extends State<Dasboard> {
               //
               for (var i = 0; i < serviceName.length; i++) ...[
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.symmetric(vertical: 4),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -239,10 +277,13 @@ class _DasboardState extends State<Dasboard> {
                                   const ServicesDetailPage()));
                     },
                     child: SizedBox(
-                      width: size.width,
+                      width: size.width*0.9,
                       height: 70,
                       child: Card(
-                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16)
+                        ),
+                        elevation: 20,
                         child: ListTile(
                           leading: icons[i],
                           title: serviceName[i],

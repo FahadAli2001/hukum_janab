@@ -274,7 +274,9 @@ class _DasboardState extends State<Dasboard> {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  const ServicesDetailPage()));
+                                    ServicesDetailPage(
+                                    serviceName: serviceName[i].toString(),
+                                  )));
                     },
                     child: SizedBox(
                       width: size.width*0.9,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hukum_janab/src/const/images.dart';
 
 import '../../const/colors.dart';
 
 class ServicesDetailPage extends StatefulWidget {
-  const ServicesDetailPage({super.key});
+  final String serviceName;
+  const ServicesDetailPage({super.key,required this.serviceName});
 
   @override
   State<ServicesDetailPage> createState() => _ServicesDetailPageState();
@@ -42,7 +42,7 @@ class _ServicesDetailPageState extends State<ServicesDetailPage> {
                    padding: const EdgeInsets.symmetric(horizontal: 10),
                    child: Row(
                     children: [
-                      Image.asset(appPoster,
+                      Image.asset(boyAvatar,
                       width: size.width*0.3,
                       fit: BoxFit.fill,
                       height:size.height*0.15 ,),

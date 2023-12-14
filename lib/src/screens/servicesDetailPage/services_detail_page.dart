@@ -19,6 +19,10 @@ class _ServicesDetailPageState extends State<ServicesDetailPage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: primaryColor,
+        title: Text(widget.serviceName,style:const TextStyle(
+          color: Colors.white
+        ),),
+        centerTitle: true,
         
       ),
       body:   Padding(

@@ -75,67 +75,22 @@ class _DasboardState extends State<Dasboard> {
       color: Colors.deepPurple,
     ),
   ];
-  List<Text> serviceName = const [
-    Text(
-      "Emergency Services",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Car Mechanic",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Bike Mechanic",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Generator Mechanic",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Car Towing Recovery",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "       UPS   ",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Car Wash",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "AC Technician",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Buy Inspection",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Scanning",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Vehical Insurance",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Dis-infection Service",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Home applinces Repairing",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "Key Maker",
-      style: TextStyle(fontSize: 14),
-    ),
-    Text(
-      "More",
-      style: TextStyle(fontSize: 14),
-    )
+  List  serviceName = const [
+    "Emergency Services",
+    "Car Mechanic",
+    "Bike Mechanic",
+    "Generator Mechanic",
+    "Car Towing Recovery",
+    "       UPS   ",
+    "Car Wash",
+    "AC Technician",
+    "Buy Inspection",
+    "Scanning",
+    "Vehical Insurance",
+    "Dis-infection Service",
+    "Home applinces Repairing",
+    "Key Maker",
+    "More",
   ];
   @override
   Widget build(BuildContext context) {
@@ -146,10 +101,9 @@ class _DasboardState extends State<Dasboard> {
         // leading: FaIcon(FontAwesomeIcons.bars),
         title: const Text(
           "Hukum Janab",
-          style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900),
         ),
         centerTitle: true,
-         
       ),
       drawer: const DashboardDrawer(),
       body: SingleChildScrollView(
@@ -168,7 +122,6 @@ class _DasboardState extends State<Dasboard> {
                     return Padding(
                       padding: const EdgeInsets.only(left: 5, right: 5),
                       child: Image.asset(
-                        
                         appPoster,
                         fit: BoxFit.fill,
                         width: 600,
@@ -202,31 +155,30 @@ class _DasboardState extends State<Dasboard> {
                                   Colors.black.withOpacity(0.3), // Shadow color
                               spreadRadius: 2, // Spread radius
                               blurRadius: 5, // Blur radius
-                              offset:const Offset(0, 3), // Shadow position
+                              offset: const Offset(0, 3), // Shadow position
                             ),
                           ],
                         ),
-                        child:const  Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                             Center(
+                            Center(
                                 child: Icon(
                               FontAwesomeIcons.phone,
                               size: 15,
                               color: Colors.white,
                             )),
-                             SizedBox(
-                              width:2,
+                            SizedBox(
+                              width: 2,
                             ),
-                             Text(
-                            "Call",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                            Text(
+                              "Call",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
                             ),
-                          ),
-                             
                           ],
                         ),
                       ),
@@ -249,12 +201,12 @@ class _DasboardState extends State<Dasboard> {
                             ),
                           ],
                         ),
-                        child:const   Center(
+                        child: const Center(
                           child: Text(
                             "Refer a friend",
                             style: TextStyle(
                               color: Colors.black,
-                            //  fontWeight: FontWeight.bold,
+                              //  fontWeight: FontWeight.bold,
                               fontSize: 18,
                             ),
                           ),
@@ -273,22 +225,23 @@ class _DasboardState extends State<Dasboard> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                    ServicesDetailPage(
-                                    serviceName: serviceName[i].toString(),
+                              builder: (context) => ServicesDetailPage(
+                                    serviceName: serviceName[i],
                                   )));
                     },
                     child: SizedBox(
-                      width: size.width*0.9,
+                      width: size.width * 0.9,
                       height: 70,
                       child: Card(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16)
-                        ),
+                            borderRadius: BorderRadius.circular(16)),
                         elevation: 20,
                         child: ListTile(
                           leading: icons[i],
-                          title: serviceName[i],
+                          title: Text(
+                            serviceName[i],
+                            style: const TextStyle(fontSize: 14),
+                          ),
                           trailing: const Icon(
                             Icons.arrow_forward_ios,
                             color: Colors.black,
